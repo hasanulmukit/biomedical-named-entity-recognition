@@ -14,3 +14,29 @@ BioScopeNER is a professional-grade, extensible pipeline designed to accurately 
 * **Model Ensemble**: Combines BioBERT and SciBERT outputs via weighted voting to further boost F1 on multi‑entity benchmarks ([medium.com](https://medium.com/%40EleventhHourEnthusiast/model-comparison-biobert-vs-pubmedbert-8c2d78178d10?utm_source=chatgpt.com)).
 * **Interactive Evaluation Dashboard**: Provides real‑time metrics visualizations with TensorBoard and Weights & Biases integration.
 * **Containerized Deployment & CI/CD**: Docker‑ready, with GitHub Actions templates for automated testing and model card publishing.
+
+## Installation
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/your-org/bioscopener
+   cd bioscopener
+   ```
+2. **Set up a Python environment** (Python 3.8+ recommended):
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate
+   ```
+3. **Install dependencies**:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. **(Optional) Docker**:
+
+   ```bash
+   docker build -t bioscopener .
+   docker run --gpus all -p 8501:8501 bioscopener
+   ```
