@@ -54,3 +54,19 @@ BioScopeNER is a professional-grade, extensible pipeline designed to accurately 
    python scripts/preprocess.py --input data/medical-ner.csv --output data/medical-ner.iob
    ```
 
+## Model Training
+
+The `train.py` script handles tokenization, caching, and training via Hugging Face’s Trainer API.
+
+```bash
+python train.py \
+  --model_name_or_path dmis-lab/biobert-base-cased-v1.1 \
+  --train_file data/medical-ner.iob \
+  --validation_file data/medical-ner.iob \
+  --output_dir outputs/biobert \
+  --epochs 3 \
+  --batch_size 16 \
+  --use_crf  \
+  --active_learning True
+```
+
