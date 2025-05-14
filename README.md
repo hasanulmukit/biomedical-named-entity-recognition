@@ -70,3 +70,37 @@ python train.py \
   --active_learning True
 ```
 
+## Evaluation
+
+Run evaluation on held‑out data and generate classification reports:
+
+```bash
+python evaluate.py \
+  --model_dir outputs/biobert \
+  --test_file data/medical-ner.iob \
+  --report_path reports/biobert_report.json
+```
+
+View metrics in TensorBoard:
+
+```bash
+tensorboard --logdir logs/
+```
+
+## Streamlit Dashboard
+
+Launch an interactive demo (VS Code + Streamlit):
+
+```bash
+streamlit run app.py
+```
+
+Enter text to visualize extracted entities with confidence scores.
+
+## Contributing
+
+We welcome improvements, issues, and pull requests! Please follow our [Code of Conduct](CODE_OF_CONDUCT.md) and submit via GitHub.
+
+## License
+
+This project is released under the Apache 2.0 License. See [LICENSE](LICENSE) for details.
